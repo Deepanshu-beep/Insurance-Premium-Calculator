@@ -1,0 +1,4 @@
+pyongo
+Flask
+pandas
+flask_cors

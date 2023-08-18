@@ -9,16 +9,14 @@ CORS(app)
 @app.route('/calculate', methods=['POST','GET'])
 def get_premium():
     data = request.json
+    
     adults = data['adultAges']
     adults = [int(i) for i in adults]
     children = data['childrenAges']
     children = [int(i) for i in children]
     tenure = int(data['insuranceTenure'])
     cover = int(data['insuranceCover'])
-    print(adults)
-    print(children)
-    print(tenure)
-    print(cover)
+
     premium = premium_cost(adults, children, tenure, cover)
     return premium
 
